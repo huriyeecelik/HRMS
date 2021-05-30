@@ -9,7 +9,7 @@ public class EmailManager implements EmailService {
 
 	@Override
 	public boolean checkEmail(String email) {
-		return false;
+		return true;
 	}
 
 }

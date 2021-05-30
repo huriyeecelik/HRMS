@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import com.kodlamaio.hrms.business.abstracts.CandidateService;
 import com.kodlamaio.hrms.core.utilities.abstracts.CandidateCheckService;
 import com.kodlamaio.hrms.core.utilities.abstracts.EmailService;
-import com.kodlamaio.hrms.core.utilities.adapters.MernisServiceAdapter;
 import com.kodlamaio.hrms.core.utilities.results.DataResult;
 import com.kodlamaio.hrms.core.utilities.results.ErrorResult;
 import com.kodlamaio.hrms.core.utilities.results.Result;
