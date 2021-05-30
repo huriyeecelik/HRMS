@@ -28,7 +28,7 @@ public class Employer {
 	private int id;
 
 	@NotEmpty
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne()
 	@JoinColumn(name = "user_id")
 	private User user;
 
