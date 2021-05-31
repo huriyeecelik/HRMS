@@ -35,12 +35,12 @@ public class JobAdvert {
 	
 	@ManyToOne()
 	@NotEmpty
-	@NotBlank(message = "City cannot be empty")
+	@NotBlank
 	@JoinColumn(name="city_id")
 	private City city;
 	
 	@NotEmpty
-	@NotBlank(message = "Description cannot be empty")
+	@NotBlank
 	@Column(name="job_description")
 	private String jobDescription;
 
@@ -51,7 +51,7 @@ public class JobAdvert {
 	private int minSalary;
 	
 	@NotEmpty
-	@NotBlank(message = "Count of Job cannot be empty")
+	@NotBlank
 	@Column(name="count_of_job")
 	private int countOfJob;
 	

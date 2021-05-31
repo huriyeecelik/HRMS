@@ -13,19 +13,17 @@ import com.kodlamaio.hrms.core.utilities.results.Result;
 import com.kodlamaio.hrms.core.utilities.results.SuccessDataResult;
 import com.kodlamaio.hrms.core.utilities.results.SuccessResult;
 import com.kodlamaio.hrms.dataAccess.abstracts.EmployerDao;
-import com.kodlamaio.hrms.dataAccess.abstracts.UserDao;
 import com.kodlamaio.hrms.entities.concretes.Employer;
-import com.kodlamaio.hrms.entities.concretes.User;
 
 @Service
 public class EmployerManager implements EmployerService {
 	private EmployerDao employerDao;
-	private UserDao userDao;
 	private EmailService emailService;
 
 	@Autowired
-	public EmployerManager(EmployerDao employerDao) {
+	public EmployerManager(EmployerDao employerDao, EmailService emailService) {
 		this.employerDao = employerDao;
+		this.emailService = emailService;
 	}
 
 	@Override
@@ -38,12 +36,6 @@ public class EmployerManager implements EmployerService {
 		if (control(employer) != null) {
 			return control(employer);
 		}
-
-		User user = new User();
-		user.setEmail(employer.getUser().getEmail());
-		user.setPassword(employer.getUser().getPassword());
-		user = userDao.save(user);
-		employer.setUser(user);
 		this.employerDao.save(employer);
 		return new SuccessResult("Kaydınız gerçekleşti");
 	}

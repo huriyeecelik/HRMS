@@ -37,22 +37,22 @@ public class Candidate {
 	private User user;
 
 	@NotEmpty
-	@NotBlank(message = "First Name cannot be empty")
+	@NotBlank
 	@Column(name = "first_name")
 	private String firstName;
 
 	@NotEmpty
-	@NotBlank(message = "Last Name cannot be empty")
+	@NotBlank
 	@Column(name = "last_name")
 	private String lastName;
 
 	@NotEmpty
-	@NotBlank(message = "First Name cannot be empty")
+	@NotBlank
 	@Column(name = "national_identity")
 	private String nationalIdentity;
 
 	@NotEmpty
-	@NotBlank(message = "Birthday Year cannot be empty")
+	@NotBlank
 	@Column(name = "birthday_year")
 	private Integer birthdayYear;
 

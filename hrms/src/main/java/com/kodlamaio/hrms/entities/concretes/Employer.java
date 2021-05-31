@@ -33,17 +33,17 @@ public class Employer {
 	private User user;
 
 	@NotEmpty
-	@NotBlank(message = "Company Name cannot be empty")
+	@NotBlank
 	@Column(name = "company_name")
 	private String companyName;
 
 	@NotEmpty
-	@NotBlank(message = "Web Site cannot be empty")
+	@NotBlank
 	@Column(name = "website")
 	private String webSite;
 
 	@NotEmpty
-	@NotBlank(message = "Phone Number cannot be empty")
+	@NotBlank
 	@Column(name = "phone_number")
 	private String phoneNumber;
 

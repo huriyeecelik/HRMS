@@ -27,16 +27,14 @@ public class User {
 	private int id;
 
 	@NotEmpty
-	@NotBlank(message = "Email cannot be empty")
-	@Email(message = "Email doesn't follow rules")
+	@NotBlank
+	@Email
 	@Column(name = "email")
 	private String email;
 
 	@NotEmpty
-	@NotBlank(message = "Password cannot be empty")
+	@NotBlank
 	@Column(name = "password")
 	private String password;
-
-
 
 }

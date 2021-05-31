@@ -22,15 +22,13 @@ import com.kodlamaio.hrms.entities.concretes.User;
 public class CandidateManager implements CandidateService {
 
 	private CandidateDao candidateDao;
-	private UserDao userDao;
 	private EmailService emailService;
 	private CandidateCheckService candidateCheckService;
 
 	@Autowired
-	public CandidateManager(CandidateDao candidateDao, UserDao userDao, EmailService emailService,
+	public CandidateManager(CandidateDao candidateDao, EmailService emailService,
 			CandidateCheckService candidateCheckService) {
 		this.candidateDao = candidateDao;
-		this.userDao = userDao;
 		this.emailService = emailService;
 		this.candidateCheckService = candidateCheckService;
 	}
@@ -45,12 +43,6 @@ public class CandidateManager implements CandidateService {
 		if (control(candidate) != null) {
 			return control(candidate);
 		}
-
-		User user = new User();
-		user.setEmail(candidate.getUser().getEmail());
-		user.setPassword(candidate.getUser().getPassword());
-		user = userDao.save(user);
-		candidate.setUser(user);
 		this.candidateDao.save(candidate);
 		return new SuccessResult("Kaydınız gerçekleşti");
 	}
